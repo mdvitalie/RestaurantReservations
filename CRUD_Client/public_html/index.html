@@ -1,0 +1,84 @@
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- Links to JavaScript files -->
+        <script defer="defer" src="js/objects.js"></script>
+        <script defer="defer" src="js/login.js"></script>
+        <script defer="defer" src="js/global.js"></script>
+
+        <!-- Google Font -->
+        <!--<link rel="preconnect" href="https://fonts.gstatic.com">-->
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,800;1,800&display=swap"
+              rel="stylesheet">
+
+        <!-- Font Awesome -->
+        <script src="https://kit.fontawesome.com/de904db22e.js" crossorigin="anonymous"></script>
+
+        <!-- Link CSS file for Login Screen -->
+        <link rel="stylesheet" href="css/login.css">
+        <title>login</title>
+        <style>
+            body {
+                background: url(img/restaurant-bg.jpg) no-repeat;
+                background-position: center;
+                background-size: cover;
+                height: 100%;
+            }
+        </style>
+    </head>
+
+    <body>
+        <!-- Header -->
+        <header>
+            <div class="logo">
+                <h3>Web Application Development | CA-2</h3>
+            </div>
+            <nav>
+                <button class="login button"><i id="display-modal" class="fas fa-user-plus"></i></button>
+            </nav>
+        </header>
+        <!-- Main -->
+        <main class="main-content">
+            <h1>Restaurant Reservations</h1>
+            <div class="team">
+                <h4>Assessment CA-2</h4>
+                <p>Group Project | Developed by:</p>
+                <ul>
+                    <li>Eoghan Feighery (x19413886)</li>
+                    <li>Mariusz Kucharski (x20113561)</li>
+                    <li>Vitalie Brescanu (x19241011)</li>
+                </ul>
+            </div>
+        </main>
+
+        <!-- Modal -->
+        <div class="simpleModal modalSignup modal">
+            <div class="loginForm animate">
+                <div class="modal-content">
+                    <span class="closeBtn signupCloseBtn">&times;</span>
+                </div>
+                <h2>Login</h2>
+                <p id="msgerror"></p>
+
+                <!-- Form -->
+                <form action="reservation.html" id="loginform">
+                    <div class="inputBox">
+                        <input type="text" id="username" name="username" required>
+                        <label for="email" id="user-lbl">User name</label>
+                    </div>
+                    <div class="inputBox">
+                        <input type="password" id="password" name="password" required>
+                        <label for="password" id="pass-lbl">Password</label>
+                    </div>
+                    <div>
+                        <button type="button" name="formValidation" id="formValidation" class="loginBtn">Submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!--End of modal-->
+    </body>
+</html>

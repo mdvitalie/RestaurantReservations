@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>Restaurant Reservation</title>
+        <!-- Font Awesome -->
+        <script src="https://kit.fontawesome.com/de904db22e.js" crossorigin="anonymous"></script>
+
+        <!--Link to jQuery library-->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+        <!-- Links to JavaScript files -->
+        <script defer="defer" src="js/script.js"></script>
+        <script defer="defer" src="js/objects.js"></script>
+
+        <!--link to CSS style file for the FORM and TABLE-->
+        <link rel="stylesheet" href="css/styles.css">
+    </head>
+
+    <!--start body and loading data from Database MongoDB at loading/refreshing the page-->
+    <body onload="getGuestsList()">
+        <header>
+            <div class="logo">
+                <h3>Web Application Development | CA-2 | Restaurant Reservations</h3>
+            </div>
+            <nav>
+                <h4 id="userinfo">User:</h4>
+                <div id="img-avatar">
+                </div>
+                <div class="logout_box">
+                    <a href="#" onclick="logout()"><i class="fas fa-sign-out-alt"></i></a>
+                </div>
+            </nav>
+        </header>
+        <div class="container">
+
+            <!--RESERVATION FORM-->
+            <div class="form_box">
+                <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+                    <h2>Book your table!</h2>
+                    <div>
+                        <label for="name">Name:</label>
+                        <label class="validation-error hide" id="fullNameValidationError">This field is required</label>
+                        <input type="hidden" name="id" id="id" value="">
+                        <input type="text" class="input-form" name="name" id="name"
+                               title="First Name" required autofocus>
+                    </div>
+                    <div>
+                        <label for="lastName">Last name:</label>
+                        <input type="text" class="input-form" name="lastName" id="lastName"
+                               title="Last Name" required>
+                    </div>
+                    <div>
+                        <label for="email">Email:</label>
+                        <input type="email" class="input-form" name="email" id="email"
+                               title="E-mail" required>
+                    </div>
+                    <div>
+                        <label for="noGuests">Table for:</label>
+                        <input type="number" class="input-form" name="email" id="noGuests" value="1" min="1"
+                               title="Number of guests" required>
+                    </div>
+                    <div>
+                        <label for="date">Date:</label>
+                        <input type="date" class="input-form" name="date" id="date"
+                               title="Date" required>
+                    </div>
+                    <div>
+                        <label for="time">Time:</label>
+                        <input type="time" class="input-form" name="time" id="time"
+                               title="Time" required>
+                    </div>
+                    <div class="form-action-buttons">
+                        <!--creating the new record-->
+                        <input type="submit" class="btn" id="btn-reservation" value="New Reservation">
+
+                        <!--purging the form-->
+                        <input type="reset" class="resetInput btn" value="Reset" onclick="resetForm();">
+                    </div>
+                </form>
+            </div>
+
+            <!--TABLE RESERVATION LIST-->
+            <div class="table-container">
+                <button type="submit" class="btn btn-refresh" id="get" value="Refresh"><i class="fas fa-sync-alt"></i> Refresh table</button>
+                <table class="list" id="GuestsList">
+                    <!--table header-->
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Table for</th>
+                            <th>Date</th>
+                            <th>Time</th>
+                            <th>Update </th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!--table data-->
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <script src="js/login.js"></script>
+
+        <script>
+                            //checkLogin();
+                            showUserInfo();
+        </script>
+    </body>
+</html>
